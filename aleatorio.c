@@ -7,7 +7,7 @@
 double funcao(double x)
 {	
 	double s;
-	s=sin(3*((rand()%200/100.0 - 1)));
+	s=(rand()%200/100.0 - 1);
    	return (s);
 }
 
@@ -17,8 +17,8 @@ void main(int argc, char **argv)
 
 	arquivo=fopen(argv[1], "w");
 	
-	xmin=-M_PI;	
-	xmax=M_PI;
+	xmin=-1;	
+	xmax=1;
 	
 	dx= (xmax - xmin)/np;
 	
