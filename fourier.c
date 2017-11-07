@@ -13,19 +13,19 @@ void coeficientes(double *x, double *y, int m, char *outroa)
   
 	arq = fopen(outroa, "w");
   
-  	scosseno = 0.0;
-  	sseno = 0.0;
-  	 
-  	for(k=0; k<m; k++)
+  	
+  	for(k=0; k<m/2; k++)
   	{	
-  		for(j=0;j<(2*m)-1;j++)
+  		scosseno = 0.0;
+  		sseno = 0.0;
+  		for(j=0;j<m;j++)
       		{  
       			scosseno = scosseno + y[j]*cos((k)*x[j]);
     			sseno = sseno + y[j]*sin((k)*x[j]);		 
    		} 
 	
-        	a[k] = (1.0/m)*(scosseno);
-     		b[k] = (1.0/m)*(sseno);
+        	a[k] = (2.0/m)*(scosseno);
+     		b[k] = (2.0/m)*(sseno);
         	akbk[k] = pow(a[k], 2) + pow(b[k],2);
         	
         	fprintf(arq, "%lf\t %lf\t %lf\t  \n", a[k], b[k], akbk[k]); 
